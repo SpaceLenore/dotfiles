@@ -1,0 +1,7 @@
+[alias]
+    knuffa = push
+    dra = pull
+    s = status
+    c = commit
+    a = add
+    t = tag
