@@ -1,0 +1,65 @@
+configuration {
+  show-icons: true;
+  drun-icon-theme: "paper";
+  location: 0;
+}
+
+* {
+  background-color: rgba(12, 14, 20, 0.5);
+  text-color: #efefef;
+  /*background: none;*/
+}
+
+#window {
+  anchor: 1;
+  transparency: "real";
+  children:   [ vertbox ];
+  width: 100%;
+  height: 100%;
+  padding: 400px 650px;
+  background-color: rgba(12, 14, 20, 0.3);
+}
+
+#vertbox {
+  orientation: vertical;
+  children:   [ entry, listview ];
+  background-color: rgba(12, 14, 20, 0.8);
+  /*background-color: transparent;*/
+}
+
+/* The search bar */
+#entry {
+  expand:     false;
+  width:      5em;
+  background-color: transparent;
+  padding: 5px;
+/*  border-bottom: 1px;*/
+  background-color: rgba(12, 14, 20, 0.5);
+  border-top-left-radius: 5px;
+  border: 0px 0px 1px;
+  border-color: rgb(100, 100, 100);
+}
+
+/* The view that contains the results */
+#listview {
+  layout:     vertical;
+  spacing:    5px;
+  lines:      5;
+  cycle: true;
+  background-color: transparent;
+}
+
+/* A result in the list */
+#element {
+  padding: 2px 7px;
+  color: #afafaf;
+  background-color: transparent;
+}
+
+/* The current selectedlist item */
+#element selected {
+  text-color: #fff;
+  background-color: rgba(100, 100, 100, 0.4);
+}
+
+/* vim:ft=css
