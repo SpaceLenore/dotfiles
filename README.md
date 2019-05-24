@@ -9,3 +9,5 @@ My collection of dotfiles, don't expect anything worth your time.
 * i3
 * termite
 * rofi
+* compton (compton-tyrone-git form AUR)
+* neofetch
