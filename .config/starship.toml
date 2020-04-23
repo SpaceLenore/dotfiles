@@ -1,0 +1,30 @@
+add_newline = false
+
+[character]
+symbol = "❯"
+error_symbol = "!"
+use_symbol_for_status = true
+
+[line_break]
+disabled = true
+
+[cmd_duration]
+disabled = true
+
+[git_branch]
+style = "bold blue"
+
+[git_status]
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+untracked = "?"
+modified = "!"
+staged = "+"
+prefix = "["
+suffix = "] "
+style = "bold bright"
+
+[php]
+disabled = true
+

@@ -11,3 +11,4 @@ My collection of dotfiles, don't expect anything worth your time.
 * rofi
 * compton (compton-tyrone-git form AUR)
 * neofetch
+* starship
