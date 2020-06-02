@@ -1,12 +1,17 @@
 [options]
-#allow_bold = true
-#audible_bell = false
-#bold_is_bright = true
-#clickable_url = true
-#dynamic_title = true
+allow_bold = true
+audible_bell = false
+bold_is_bright = true
+clickable_url = true
+dynamic_title = true
+
 font = Monospace 11
+# font = Noto Sans Mono Medium 11
+# font = Source Code Pro 11
+
+
 #fullscreen = true
-#icon_name = terminal
+icon_name = terminal
 #mouse_autohide = false
 #scroll_on_output = false
 #scroll_on_keystroke = true
@@ -24,7 +29,7 @@ scrollback_lines = 10000
 #cursor_blink = system
 
 # "block", "underline" or "ibeam"
-#cursor_shape = block
+cursor_shape = block
 
 # Hide links that are no longer valid in url select overlay mode
 #filter_unmatched_urls = true
@@ -36,64 +41,26 @@ scrollback_lines = 10000
 #size_hints = false
 
 # "off", "left" or "right"
-#scrollbar = off
+scrollbar = off
 
 [colors]
-# If both of these are unset, cursor falls back to the foreground color,
-# and cursor_foreground falls back to the background color.
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
-
-#foreground = #dcdccc
-#foreground_bold = #ffffff
-#background = #3f3f3f
-
-# 20% background transparency (requires a compositor)
-# background = rgba(63, 63, 63, 0.8)
-
-# If unset, will reverse foreground and background
-# highlight = #2f2f2f
-
-# Colors from color0 to color254 can be set
-#color0 = #3f3f3f
-#color1 = #705050
-#color2 = #60b48a
-#color3 = #dfaf8f
-#color4 = #506070
-#color5 = #dc8cc3
-#color6 = #8cd0d3
-#color7 = #dcdccc
-#color8 = #709080
-#color9 = #dca3a3
-#color10 = #c3bf9f
-#color11 = #f0dfaf
-#color12 = #94bff3
-#color13 = #ec93d3
-#color14 = #93e0e3
-#color15 = #ffffff
-
-# --> NORD COLOR THEME <--
-# Slightly edited to have transparent background
-cursor = #c7c7c7
-cursor_foreground = #2e3440
 
 # Dracula theme for termite
 # https://github.com/dracula/termite
 # Copyright 2013-present, All rights reserved
 # Code licensed under the MIT license
 
-[colors]
-
-# special
+cursor_foreground = #2e3440
 foreground      = #eaeaea
 foreground_bold = #f8f8f2
 cursor          = #f8f8f2
-background      = rgba(39, 41, 54, 0.8)
-# background      = rgba(40, 42, 54, 0.98)
+# background      = rgba(75, 75, 75, 0.3)
+# background      = rgba(39, 41, 54, 0.4)
+background      = rgba(30, 32, 44, 0.80)
 
 # black
 color0  = rgba(39, 41, 54, 1)
-color8  = #676767
+color8  = #9b9b9b
 
 # red
 color1  = #ff6d67
