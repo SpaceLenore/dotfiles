@@ -111,6 +111,50 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# Limit workspaces 1-10 to monitor one (DVI-I-1)
+set $mon1 DVI-I-1
+workspace $ws1 output $mon1
+workspace $ws2 output $mon1
+workspace $ws3 output $mon1
+workspace $ws4 output $mon1
+workspace $ws5 output $mon1
+workspace $ws6 output $mon1
+workspace $ws7 output $mon1
+workspace $ws8 output $mon1
+workspace $ws9 output $mon1
+workspace $ws10 output $mon1
+
+
+# More workspaces (custom)
+
+set $wsf1 "11"
+set $wsf2 "12"
+set $wsf3 "13"
+set $wsf4 "14"
+set $wsf5 "15"
+set $wsf6 "16"
+set $wsf7 "17"
+set $wsf8 "18"
+set $wsf9 "19"
+set $wsf10 "20"
+set $wsf11 "21"
+set $wsf12 "22"
+
+# Limit workspaces 11-22 to monitor two (DVI-D-0)
+set $mon2 DVI-D-0
+workspace $wsf1 output $mon2
+workspace $wsf2 output $mon2
+workspace $wsf3 output $mon2
+workspace $wsf4 output $mon2
+workspace $wsf5 output $mon2
+workspace $wsf6 output $mon2
+workspace $wsf7 output $mon2
+workspace $wsf8 output $mon2
+workspace $wsf9 output $mon2
+workspace $wsf10 output $mon2
+workspace $wsf11 output $mon2
+workspace $wsf12 output $mon2
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -123,6 +167,20 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
+# switch more workspaces (custom)
+bindsym $mod+F1 workspace $wsf1
+bindsym $mod+F2 workspace $wsf2
+bindsym $mod+F3 workspace $wsf3
+bindsym $mod+F4 workspace $wsf4
+bindsym $mod+F5 workspace $wsf5
+bindsym $mod+F6 workspace $wsf6
+bindsym $mod+F7 workspace $wsf7
+bindsym $mod+F8 workspace $wsf8
+bindsym $mod+F9 workspace $wsf9
+bindsym $mod+F10 workspace $wsf10
+bindsym $mod+F11 workspace $wsf11
+bindsym $mod+F12 workspace $wsf12
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -134,6 +192,20 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+
+# move focused container to more worksopaces (custom)
+bindsym $mod+Shift+F1 move container to workspace $wsf1
+bindsym $mod+Shift+F2 move container to workspace $wsf2
+bindsym $mod+Shift+F3 move container to workspace $wsf3
+bindsym $mod+Shift+F4 move container to workspace $wsf4
+bindsym $mod+Shift+F5 move container to workspace $wsf5
+bindsym $mod+Shift+F6 move container to workspace $wsf6
+bindsym $mod+Shift+F7 move container to workspace $wsf7
+bindsym $mod+Shift+F8 move container to workspace $wsf8
+bindsym $mod+Shift+F9 move container to workspace $wsf9
+bindsym $mod+Shift+F10 move container to workspace $wsf10
+bindsym $mod+Shift+F11 move container to workspace $wsf11
+bindsym $mod+Shift+F12 move container to workspace $wsf12
 
 # Custom back and forth on mod tab
 bindsym $mod+Tab workspace back_and_forth
@@ -172,7 +244,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# ====================== CUSTOM EDITS =============================
+# ===================================================
 
 # gaps
 gaps inner 15
@@ -185,8 +257,12 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # feh background
-#exec_always --no-startup-id feh --bg-fill /home/lenore/Pictures/nice/city-reflections/2560x1600.jpg
+# exec_always --no-startup-id feh --bg-fill /home/lenore/Pictures/nice/city-reflections/2560x1600.jpg
 exec_always --no-startup-id feh --bg-fill /home/lenore/Pictures/nice/sunset_city.jpg
+
+# exec_always --no-startup-id feh --bg-fill /home/lenore/Pictures/cyberpunk/lookingatyou.jpg
+
+# exec_always --no-startup-id feh --bg-scale --no-xinerama Pictures/nice/mortal-engines-wallpapers-crop1.jpg
 
 # start compton to handle transparent backgrounds
 exec_always --no-startup-id compton --config /home/lenore/.config/compton.conf
@@ -196,10 +272,14 @@ for_window [class="^.*"] border pixel 0
 # new_window 0pixel
 
 # i3Lock: super + sift + L to lock the screen
-bindsym $mod+Ctrl+l exec "i3lock -i /home/lenore/Pictures/nice/png/purple_morning.png -t -e -f"
+# bindsym $mod+Ctrl+l exec "i3lock -i /home/lenore/Pictures/nice/png/purple_morning.png -t -e -f"
+bindsym $mod+Ctrl+l exec --no-startup-id /home/lenore/.config/lock.sh
 
 # Custom sleep mode
-bindsym $mod+Shift+h exec "i3-nagbar -t warning -m 'Sleep mode?' -B 'Sleep' 'i3lock -i /home/lenore/Pictures/nice/png/purple_morning.png -t -e -f && systemctl suspend'"
+# bindsym $mod+Shift+h exec "i3-nagbar -t warning -m 'Sleep mode?' -B 'Sleep' 'i3lock -i /home/lenore/Pictures/nice/png/purple_morning.png -t -e -f && systemctl suspend'"
+
+bindsym $mod+Shift+h exec "i3-nagbar -t warning -m 'Sleep mode?' -B 'Sleep' '/home/lenore/.config/lock.sh && systemctl suspend'"
+
 
 # Multimedia Keys
 
@@ -229,10 +309,9 @@ bindsym $mod+m exec "thunderbird"
 # Dunst notifications
 exec --no-startup-id dunst -config /home/lenore/.config/dunst/dunstrc
 
-# Respecc
-# bindsym f exec ffplay -autoexit -nodisp /home/lenore/Music/respekt.m4a
+bindsym $mod+shift+p exec scrot -f '/home/lenore/Pictures/Screenshots/scrot/scrot-%Y-%m-%d_$wx$h.png'
 
-# ===================== END OF CUSTOM EDITS =======================
+# ============================================
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
