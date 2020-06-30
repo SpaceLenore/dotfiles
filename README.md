@@ -12,3 +12,4 @@ My collection of dotfiles, don't expect anything worth your time.
 * compton (compton-tyrone-git form AUR)
 * neofetch
 * starship
+* dunst
